@@ -1,0 +1,1550 @@
+2025-10-27 15:28:26,838 - ERROR - Error reading uploaded CSV: No module named 'pyarrow.lib'
+Traceback (most recent call last):
+  File "C:\Users\ayana\OneDrive\Desktop\allocation_project\streamlit_ui.py", line 37, in <module>
+    st.dataframe(df1.head(10))
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\streamlit\runtime\metrics_util.py", line 443, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\streamlit\elements\arrow.py", line 552, in dataframe
+    import pyarrow as pa
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pyarrow\__init__.py", line 92, in <module>
+    import pyarrow.lib as _lib
+ModuleNotFoundError: No module named 'pyarrow.lib'
+2025-10-27 15:37:44,642 - ERROR - Allocation failed: argument of type 'method' is not iterable
+Traceback (most recent call last):
+  File "C:\Users\ayana\OneDrive\Desktop\allocation_project\allocation_core.py", line 99, in allocate_by_band_with_cycle
+    df = pd.read_csv(input_path)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\common.py", line 719, in get_handle
+    if _is_binary_mode(path_or_buf, mode) and "b" not in mode:
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\common.py", line 1181, in _is_binary_mode
+    return isinstance(handle, _get_binary_io_classes()) or "b" in getattr(
+TypeError: argument of type 'method' is not iterable
+2025-10-27 15:37:44,657 - ERROR - Allocation failed: argument of type 'method' is not iterable
+Traceback (most recent call last):
+  File "C:\Users\ayana\OneDrive\Desktop\allocation_project\streamlit_ui.py", line 56, in <module>
+    alloc_df, fac_pref_df = allocate_by_band_with_cycle(df1.copy())
+  File "C:\Users\ayana\OneDrive\Desktop\allocation_project\allocation_core.py", line 99, in allocate_by_band_with_cycle
+    df = pd.read_csv(input_path)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\common.py", line 719, in get_handle
+    if _is_binary_mode(path_or_buf, mode) and "b" not in mode:
+  File "C:\Users\ayana\miniconda3\envs\ds_env\lib\site-packages\pandas\io\common.py", line 1181, in _is_binary_mode
+    return isinstance(handle, _get_binary_io_classes()) or "b" in getattr(
+TypeError: argument of type 'method' is not iterable
+2025-10-27 16:07:19,187 - INFO - Loaded input (path:C:\Users\ayana\OneDrive\Desktop\allocation_project\input_btp_mtp_allocation.csv) shape=(90, 22)
+2025-10-27 16:07:19,188 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:07:19,188 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:07:19,189 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:07:19,189 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:07:19,189 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:07:19,190 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:07:19,191 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:07:19,191 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:07:19,191 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:07:19,191 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:07:19,192 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:07:19,193 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:07:19,193 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:07:19,193 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:07:19,193 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:07:19,193 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:07:19,193 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:07:19,194 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:07:19,195 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:07:19,195 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:07:19,195 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:07:19,195 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:07:19,195 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:07:19,195 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:07:19,195 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:07:19,196 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:07:19,197 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:07:19,197 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:07:19,197 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:07:19,197 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:07:19,198 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:07:19,215 - INFO - Allocation CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\output_btp_mtp_allocation_20251027_160719.csv
+2025-10-27 16:07:19,215 - INFO - Faculty pref CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\fac_preference_count_20251027_160719.csv
+2025-10-27 16:07:19,215 - INFO - Total cycles executed: 5
+2025-10-27 16:08:46,987 - INFO - Loaded input (path:C:\Users\ayana\OneDrive\Desktop\allocation_project\input_btp_mtp_allocation.csv) shape=(90, 22)
+2025-10-27 16:08:46,988 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:08:46,988 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:08:46,988 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:08:46,988 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:08:46,988 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:08:46,988 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:08:46,989 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:08:46,990 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:08:46,990 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:08:46,990 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:08:46,990 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:08:46,990 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:08:46,991 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:08:46,992 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:08:46,992 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:08:46,992 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:08:46,992 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:08:46,992 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:08:46,992 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:08:46,992 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:08:46,993 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:08:46,994 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:08:46,994 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:08:46,994 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:08:46,994 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:08:46,994 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:08:46,994 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:08:46,994 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:08:46,995 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:08:46,996 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:08:46,996 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:08:46,996 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:08:46,996 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:08:46,996 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:08:46,997 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:08:46,998 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:08:46,998 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:08:46,998 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:08:47,007 - INFO - Allocation CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\output_btp_mtp_allocation_20251027_160846.csv
+2025-10-27 16:08:47,007 - INFO - Faculty pref CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\fac_preference_count_20251027_160846.csv
+2025-10-27 16:08:47,007 - INFO - Total cycles executed: 5
+2025-10-27 16:13:34,861 - INFO - Loaded input (path:C:\Users\ayana\OneDrive\Desktop\allocation_project\input_btp_mtp_allocation.csv) shape=(90, 22)
+2025-10-27 16:13:34,862 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:13:34,862 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:13:34,862 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:13:34,863 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:13:34,863 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:13:34,863 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:13:34,863 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:13:34,863 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:13:34,863 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:13:34,864 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:13:34,865 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:13:34,865 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:13:34,865 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:13:34,865 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:13:34,865 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:13:34,865 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:13:34,865 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:13:34,866 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:13:34,867 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:13:34,867 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:13:34,867 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:13:34,867 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:13:34,867 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:13:34,867 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:13:34,868 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:13:34,869 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:13:34,869 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:13:34,869 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:13:34,869 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:13:34,870 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:13:34,870 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:13:34,870 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:13:34,871 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:13:34,872 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:13:34,883 - INFO - Allocation CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\output_btp_mtp_allocation_20251027_161334.csv
+2025-10-27 16:13:34,883 - INFO - Faculty pref CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\fac_preference_count_20251027_161334.csv
+2025-10-27 16:13:34,883 - INFO - Total cycles executed: 5
+2025-10-27 16:24:08,412 - INFO - Loaded input (Dataframe via upload) shape=(90, 22)
+2025-10-27 16:24:08,413 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:24:08,413 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:24:08,414 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:24:08,414 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:24:08,414 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:24:08,414 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:24:08,415 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:24:08,416 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:24:08,416 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:24:08,417 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:24:08,418 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:24:08,419 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:24:08,419 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:24:08,419 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:24:08,419 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:24:08,420 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:24:08,420 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:24:08,420 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:24:08,420 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:24:08,420 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:24:08,421 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:24:08,421 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:24:08,421 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:24:08,421 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:24:08,422 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:24:08,422 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:24:08,422 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:24:08,422 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:24:08,422 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:24:08,423 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:24:08,423 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:24:08,423 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:24:08,423 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:24:08,424 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:24:08,425 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:24:08,425 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:24:08,425 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:24:08,425 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:24:08,425 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:24:08,425 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:24:08,425 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:24:08,426 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:24:08,427 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:24:08,427 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:24:08,427 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:24:08,440 - INFO - Allocation CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\output_btp_mtp_allocation_20251027_162408.csv
+2025-10-27 16:24:08,440 - INFO - Faculty pref CSV written: C:\Users\ayana\OneDrive\Desktop\allocation_project\outputs\fac_preference_count_20251027_162408.csv
+2025-10-27 16:24:08,440 - INFO - Total cycles executed: 5
+2025-10-27 16:32:40,124 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:32:40,124 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:32:40,124 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:32:40,125 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:32:40,125 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:32:40,127 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:32:40,127 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:32:40,128 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:32:40,129 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:32:40,129 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:32:40,130 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:32:40,130 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:32:40,131 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:32:40,131 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:32:40,132 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:32:40,132 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:32:40,133 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:32:40,133 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:32:40,133 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:32:40,133 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:32:40,134 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:32:40,134 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:32:40,135 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:32:40,135 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:32:40,135 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:32:40,136 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:32:40,136 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:32:40,137 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:32:40,137 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:32:40,137 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:32:40,138 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:32:40,138 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:32:40,139 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:32:40,139 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:32:40,139 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:32:40,140 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:32:40,140 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:32:40,141 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:32:40,141 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:32:40,141 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:32:40,141 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:32:40,142 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:32:40,142 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:32:40,143 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:32:40,143 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:32:40,143 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:32:40,144 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:32:40,145 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:32:40,146 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:32:40,147 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:32:40,147 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:32:40,147 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:32:40,147 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:32:40,147 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:32:40,147 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:32:40,147 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:32:40,148 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:32:40,149 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:32:40,149 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:32:40,149 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:32:40,150 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:32:40,151 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:32:40,152 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:32:40,159 - INFO - Allocation CSV generated
+2025-10-27 16:32:40,159 - INFO - Faculty pref CSV generated
+2025-10-27 16:32:40,159 - INFO - Total cycles executed: 5
+2025-10-27 16:34:08,450 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:34:08,451 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:34:08,452 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:34:08,452 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:34:08,452 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:34:08,453 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:34:08,455 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:34:08,455 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:34:08,456 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:34:08,457 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:34:08,458 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:34:08,458 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:34:08,458 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:34:08,458 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:34:08,458 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:34:08,459 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:34:08,460 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:34:08,460 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:34:08,460 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:34:08,460 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:34:08,461 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:34:08,461 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:34:08,462 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:34:08,463 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:34:08,472 - INFO - Allocation CSV generated
+2025-10-27 16:34:08,472 - INFO - Faculty pref CSV generated
+2025-10-27 16:34:08,472 - INFO - Total cycles executed: 5
+2025-10-27 16:36:09,170 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:36:09,171 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:36:09,171 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:36:09,171 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:36:09,171 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:36:09,171 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:36:09,171 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:36:09,172 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:36:09,172 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:36:09,172 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:36:09,173 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:36:09,174 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:36:09,174 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:36:09,174 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:36:09,174 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:36:09,174 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:36:09,175 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:36:09,176 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:36:09,176 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:36:09,176 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:36:09,177 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:36:09,178 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:36:09,178 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:36:09,178 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:36:09,178 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:36:09,179 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:36:09,179 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:36:09,179 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:36:09,179 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:36:09,179 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:36:09,180 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:36:09,181 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:36:09,181 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:36:09,181 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:36:09,181 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:36:09,181 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:36:09,182 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:36:09,183 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:36:09,193 - INFO - Allocation CSV generated
+2025-10-27 16:36:09,193 - INFO - Faculty pref CSV generated
+2025-10-27 16:36:09,193 - INFO - Total cycles executed: 5
+2025-10-27 16:36:15,235 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:36:15,235 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:36:15,235 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:36:15,236 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:36:15,236 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:36:15,236 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:36:15,236 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:36:15,236 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:36:15,237 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:36:15,238 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:36:15,238 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:36:15,238 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:36:15,238 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:36:15,238 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:36:15,238 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:36:15,239 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:36:15,240 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:36:15,240 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:36:15,241 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:36:15,241 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:36:15,241 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:36:15,241 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:36:15,241 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:36:15,242 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:36:15,242 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:36:15,243 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:36:15,243 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:36:15,243 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:36:15,243 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:36:15,244 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:36:15,244 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:36:15,244 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:36:15,245 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:36:15,246 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:36:15,246 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:36:15,246 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:36:15,246 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:36:15,247 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:36:15,248 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:36:15,259 - INFO - Allocation CSV generated
+2025-10-27 16:36:15,259 - INFO - Faculty pref CSV generated
+2025-10-27 16:36:15,259 - INFO - Total cycles executed: 5
+2025-10-27 16:37:02,544 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:37:02,546 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:37:02,546 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:37:02,546 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:37:02,547 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:37:02,548 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:37:02,548 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:37:02,548 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:37:02,549 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:37:02,549 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:37:02,549 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:37:02,549 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:37:02,550 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:37:02,550 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:37:02,550 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:37:02,550 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:37:02,550 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:37:02,551 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:37:02,551 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:37:02,551 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:37:02,552 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:37:02,553 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:37:02,554 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:37:02,554 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:37:02,554 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:37:02,554 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:37:02,554 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:37:02,554 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:37:02,554 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:37:02,554 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:37:02,554 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:37:02,555 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:37:02,555 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:37:02,555 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:37:02,555 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:37:02,555 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:37:02,556 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:37:02,556 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:37:02,556 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:37:02,556 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:37:02,556 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:37:02,557 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:37:02,557 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:37:02,557 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:37:02,557 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:37:02,557 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:37:02,557 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:37:02,557 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:37:02,558 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:37:02,558 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:37:02,558 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:37:02,558 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:37:02,558 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:37:02,559 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:37:02,560 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:37:02,561 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:37:02,561 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:37:02,561 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:37:02,562 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:37:02,563 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:37:02,563 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:37:02,563 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:37:02,563 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:37:02,564 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:37:02,574 - INFO - Allocation CSV generated
+2025-10-27 16:37:02,574 - INFO - Faculty pref CSV generated
+2025-10-27 16:37:02,574 - INFO - Total cycles executed: 5
+2025-10-27 16:43:47,591 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:43:47,592 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:43:47,592 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:43:47,592 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:43:47,593 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:43:47,593 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:43:47,593 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:43:47,593 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:43:47,594 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:43:47,595 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:43:47,595 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:43:47,595 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:43:47,596 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:43:47,597 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:43:47,598 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:43:47,598 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:43:47,598 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:43:47,598 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:43:47,599 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:43:47,600 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:43:47,600 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:43:47,600 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:43:47,600 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:43:47,600 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:43:47,601 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:43:47,602 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:43:47,602 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:43:47,602 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:43:47,602 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:43:47,602 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:43:47,603 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:43:47,604 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:43:47,610 - INFO - Allocation CSV generated
+2025-10-27 16:43:47,611 - INFO - Faculty pref CSV generated
+2025-10-27 16:43:47,611 - INFO - Total cycles executed: 5
+2025-10-27 16:57:40,782 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:57:40,784 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:57:40,784 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:57:40,784 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:57:40,784 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:57:40,785 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:57:40,786 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:57:40,787 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:57:40,787 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:57:40,787 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:57:40,787 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:57:40,787 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:57:40,788 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:57:40,789 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:57:40,789 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:57:40,789 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:57:40,789 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:57:40,789 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:57:40,789 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:57:40,790 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:57:40,791 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:57:40,791 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:57:40,791 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:57:40,791 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:57:40,791 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:57:40,791 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:57:40,791 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:57:40,791 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:57:40,791 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:57:40,791 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:57:40,791 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:57:40,792 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:57:40,793 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:57:40,793 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:57:40,793 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:57:40,793 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:57:40,793 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:57:40,793 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:57:40,794 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:57:40,795 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:57:40,795 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:57:40,795 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:57:40,817 - INFO - Allocation CSV generated
+2025-10-27 16:57:40,818 - INFO - Faculty pref CSV generated
+2025-10-27 16:57:40,818 - INFO - Total cycles executed: 5
+2025-10-27 16:59:21,989 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:59:21,990 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:59:21,990 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:59:21,990 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:59:21,992 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:59:21,992 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:59:21,992 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:59:21,993 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:59:21,993 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:59:21,993 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:59:21,994 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:59:21,995 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:59:21,995 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:59:21,995 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:59:21,995 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:59:21,995 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:59:21,996 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:59:21,996 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:59:21,996 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:59:21,996 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:59:21,996 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:59:21,997 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:59:21,997 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:59:21,997 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:59:21,997 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:59:21,998 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:59:21,999 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:59:21,999 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:59:21,999 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:59:21,999 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:59:21,999 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:59:22,000 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:59:22,001 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:59:22,001 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:59:22,001 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:59:22,001 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:59:22,001 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:59:22,001 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:59:22,001 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:59:22,001 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:59:22,001 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:59:22,002 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:59:22,002 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:59:22,002 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:59:22,002 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:59:22,003 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:59:22,004 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:59:22,004 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:59:22,004 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:59:22,004 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:59:22,004 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:59:22,004 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:59:22,005 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:59:22,006 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:59:22,014 - INFO - Allocation CSV generated
+2025-10-27 16:59:22,014 - INFO - Faculty pref CSV generated
+2025-10-27 16:59:22,014 - INFO - Total cycles executed: 5
+2025-10-27 16:59:54,811 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 16:59:54,811 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 16:59:54,811 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 16:59:54,811 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 16:59:54,812 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 16:59:54,812 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 16:59:54,813 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 16:59:54,813 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 16:59:54,814 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 16:59:54,814 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 16:59:54,814 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 16:59:54,814 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 16:59:54,814 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 16:59:54,815 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 16:59:54,815 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 16:59:54,815 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 16:59:54,816 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 16:59:54,817 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 16:59:54,817 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 16:59:54,818 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 16:59:54,819 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 16:59:54,819 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 16:59:54,819 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 16:59:54,820 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 16:59:54,822 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 16:59:54,822 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 16:59:54,822 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 16:59:54,822 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 16:59:54,822 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 16:59:54,822 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 16:59:54,823 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 16:59:54,824 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 16:59:54,824 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 16:59:54,824 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 16:59:54,824 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 16:59:54,824 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 16:59:54,832 - INFO - Allocation CSV generated
+2025-10-27 16:59:54,832 - INFO - Faculty pref CSV generated
+2025-10-27 16:59:54,833 - INFO - Total cycles executed: 5
+2025-10-27 17:02:14,333 - ERROR - Error reading uploaded CSV: module 'streamlit' has no attribute 'banner'
+Traceback (most recent call last):
+  File "C:\Users\ayana\OneDrive\Desktop\allocation_project\streamlit_ui.py", line 45, in <module>
+    st.banner(f"Loaded input file: {st.session_state['uploaded_df'].shape[0]} rows × {st.session_state['uploaded_df'].shape[1]} cols")
+AttributeError: module 'streamlit' has no attribute 'banner'
+2025-10-27 17:05:32,428 - INFO - Loaded input (Dataframe_upload) shape=(90, 22)
+2025-10-27 17:05:32,429 - INFO - Faculties: ['ABM', 'AE', 'AM', 'AR', 'CA', 'JC', 'JM', 'MA', 'RH', 'RM', 'RM2', 'RS', 'SK', 'SKD', 'SKM', 'SM', 'SS', 'ST']
+2025-10-27 17:05:32,429 - INFO - Initial quotas: {'ABM': 5, 'AE': 5, 'AM': 5, 'AR': 5, 'CA': 5, 'JC': 5, 'JM': 5, 'MA': 5, 'RH': 5, 'RM': 5, 'RM2': 5, 'RS': 5, 'SK': 5, 'SKD': 5, 'SKM': 5, 'SM': 5, 'SS': 5, 'ST': 5}
+2025-10-27 17:05:32,429 - INFO - Bands sizes: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+2025-10-27 17:05:32,429 - INFO - Starting cycle 1; remaining students=90
+2025-10-27 17:05:32,429 - INFO - Cycle 1: Assigned Roll=1601CE24 to RM (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CS21 to RM2 (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CE10 to SKM (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CE05 to AE (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CB18 to JM (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CB16 to SM (pref=2). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CS33 to MA (pref=2). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CS18 to SS (pref=2). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CB04 to ABM (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CS24 to SKD (pref=1). Quota left=4
+2025-10-27 17:05:32,430 - INFO - Cycle 1: Assigned Roll=1601CS41 to JC (pref=4). Quota left=4
+2025-10-27 17:05:32,431 - INFO - Cycle 1: Assigned Roll=1601CE13 to AM (pref=5). Quota left=4
+2025-10-27 17:05:32,432 - INFO - Cycle 1: Assigned Roll=1601CS34 to AR (pref=2). Quota left=4
+2025-10-27 17:05:32,432 - INFO - Cycle 1: Assigned Roll=1601CB22 to RS (pref=4). Quota left=4
+2025-10-27 17:05:32,433 - INFO - Cycle 1: Assigned Roll=1601CS28 to CA (pref=4). Quota left=4
+2025-10-27 17:05:32,433 - INFO - Cycle 1: Assigned Roll=1601CS04 to ST (pref=7). Quota left=4
+2025-10-27 17:05:32,433 - INFO - Cycle 1: Assigned Roll=1601CS25 to SK (pref=15). Quota left=4
+2025-10-27 17:05:32,434 - INFO - Cycle 1: Assigned Roll=1601CE12 to RH (pref=7). Quota left=4
+2025-10-27 17:05:32,434 - INFO - Cycle 1 complete. Assigned this cycle: 18
+2025-10-27 17:05:32,434 - INFO - Starting cycle 2; remaining students=72
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CE18 to RM2 (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CS38 to ABM (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CS26 to MA (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CS32 to SS (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CE20 to SK (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CS42 to AE (pref=1). Quota left=3
+2025-10-27 17:05:32,434 - INFO - Cycle 2: Assigned Roll=1601CB20 to SKD (pref=2). Quota left=3
+2025-10-27 17:05:32,435 - INFO - Cycle 2: Assigned Roll=1601CS14 to JM (pref=1). Quota left=3
+2025-10-27 17:05:32,435 - INFO - Cycle 2: Assigned Roll=1601CS27 to CA (pref=3). Quota left=3
+2025-10-27 17:05:32,435 - INFO - Cycle 2: Assigned Roll=1601CS47 to RS (pref=3). Quota left=3
+2025-10-27 17:05:32,435 - INFO - Cycle 2: Assigned Roll=1601CB13 to JC (pref=1). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CE16 to SKM (pref=1). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CB12 to AM (pref=2). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CS08 to ST (pref=2). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CE07 to AR (pref=4). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CB08 to RH (pref=1). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CB01 to RM (pref=1). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2: Assigned Roll=1601CS17 to SM (pref=14). Quota left=3
+2025-10-27 17:05:32,436 - INFO - Cycle 2 complete. Assigned this cycle: 18
+2025-10-27 17:05:32,436 - INFO - Starting cycle 3; remaining students=54
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CB09 to RS (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CS30 to JM (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CS09 to AE (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CE02 to SKM (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CE04 to JC (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CB11 to AM (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CB17 to MA (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CS23 to SK (pref=1). Quota left=2
+2025-10-27 17:05:32,437 - INFO - Cycle 3: Assigned Roll=1601CB19 to RM2 (pref=1). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CE09 to AR (pref=2). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CE08 to SKD (pref=1). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CE25 to SM (pref=1). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CB14 to ABM (pref=1). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CB05 to ST (pref=7). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CS20 to RM (pref=5). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CB21 to CA (pref=3). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CE21 to SS (pref=9). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3: Assigned Roll=1601CS13 to RH (pref=8). Quota left=2
+2025-10-27 17:05:32,438 - INFO - Cycle 3 complete. Assigned this cycle: 18
+2025-10-27 17:05:32,438 - INFO - Starting cycle 4; remaining students=36
+2025-10-27 17:05:32,438 - INFO - Cycle 4: Assigned Roll=1601CS40 to SKD (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS07 to JM (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS03 to RM (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS37 to SKM (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CE11 to CA (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CE22 to SK (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CE23 to AR (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS10 to RM2 (pref=1). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS22 to RH (pref=2). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS29 to MA (pref=2). Quota left=1
+2025-10-27 17:05:32,439 - INFO - Cycle 4: Assigned Roll=1601CS45 to RS (pref=3). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CS05 to AE (pref=1). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CB03 to JC (pref=1). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601cs48 to AM (pref=1). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CS06 to SM (pref=2). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CB24 to ABM (pref=6). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CS11 to ST (pref=7). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4: Assigned Roll=1601CE17 to SS (pref=6). Quota left=1
+2025-10-27 17:05:32,440 - INFO - Cycle 4 complete. Assigned this cycle: 18
+2025-10-27 17:05:32,440 - INFO - Starting cycle 5; remaining students=18
+2025-10-27 17:05:32,440 - INFO - Cycle 5: Assigned Roll=1601CS15 to CA (pref=1). Quota left=0
+2025-10-27 17:05:32,440 - INFO - Cycle 5: Assigned Roll=1601CS35 to RM2 (pref=1). Quota left=0
+2025-10-27 17:05:32,440 - INFO - Cycle 5: Assigned Roll=1601CE19 to AE (pref=1). Quota left=0
+2025-10-27 17:05:32,441 - INFO - Cycle 5: Assigned Roll=1601CB23 to RM (pref=1). Quota left=0
+2025-10-27 17:05:32,441 - INFO - Cycle 5: Assigned Roll=1601CE06 to ABM (pref=1). Quota left=0
+2025-10-27 17:05:32,441 - INFO - Cycle 5: Assigned Roll=1601CS02 to JC (pref=1). Quota left=0
+2025-10-27 17:05:32,441 - INFO - Cycle 5: Assigned Roll=1601CS19 to AR (pref=1). Quota left=0
+2025-10-27 17:05:32,441 - INFO - Cycle 5: Assigned Roll=1601CS39 to SKM (pref=1). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CE03 to SM (pref=1). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CS12 to JM (pref=1). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CS43 to RS (pref=2). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CS44 to AM (pref=2). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CE01 to SKD (pref=2). Quota left=0
+2025-10-27 17:05:32,442 - INFO - Cycle 5: Assigned Roll=1601CS01 to MA (pref=3). Quota left=0
+2025-10-27 17:05:32,443 - INFO - Cycle 5: Assigned Roll=1601CS16 to SK (pref=6). Quota left=0
+2025-10-27 17:05:32,443 - INFO - Cycle 5: Assigned Roll=1601CS46 to SS (pref=2). Quota left=0
+2025-10-27 17:05:32,443 - INFO - Cycle 5: Assigned Roll=1601CS36 to ST (pref=11). Quota left=0
+2025-10-27 17:05:32,443 - INFO - Cycle 5: Assigned Roll=1601CS31 to RH (pref=17). Quota left=0
+2025-10-27 17:05:32,443 - INFO - Cycle 5 complete. Assigned this cycle: 18
+2025-10-27 17:05:32,451 - INFO - Allocation CSV generated
+2025-10-27 17:05:32,451 - INFO - Faculty pref CSV generated
+2025-10-27 17:05:32,451 - INFO - Total cycles executed: 5
