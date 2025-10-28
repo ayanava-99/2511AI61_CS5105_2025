@@ -1,4 +1,4 @@
-# 🧮 Student Allocation App
+# 🧮 Student Allocation App  **[LIVE🌐](https://studentallocationapp.streamlit.app/)**
 
 A dynamic **BTP/MTP Student–Faculty Allocation System** built using **Python** and **Streamlit**, supporting both local and Docker-based execution.  
 It performs **banded, mod-n allocation** based on CGPA and faculty preferences, generating two CSV outputs:
@@ -6,6 +6,7 @@ It performs **banded, mod-n allocation** based on CGPA and faculty preferences, 
 - **Faculty preference count file** (`fac_preference_count_*.csv`)
 
 ---
+
 
 ## 📁 Folder Structure
 
