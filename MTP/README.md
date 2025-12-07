@@ -1,4 +1,4 @@
-#🎓IIT Patna Exam Seating & Attendance Generator
+# 🎓IIT Patna Exam Seating & Attendance Generator
 
 **An intelligent, end-to-end exam management system that automates seating arrangements, clash detection, and attendance PDF generation.**
 
@@ -67,7 +67,7 @@ Each room-wise attendance sheet includes:
 - Exam metadata (date, subject, room, shift)
 - Institution header with IITP branding
 
-### 5. **Comprehensive Output Files**
+### 5. **Output Files**
 - **Date-wise folders**: Organized by exam dates
 - **Shift-wise subdirectories**: Morning and Evening exams
 - **Subject Excel files**: Student allocation per subject
@@ -77,9 +77,10 @@ Each room-wise attendance sheet includes:
 
 ### 6. **Streamlit Web Interface**
 - Intuitive upload interface
-- Real-time parameter adjustment (buffer, density mode)
+- Real-time parameter adjustment
 - One-click processing
 - Automatic ZIP file generation for download
+- Search and view attendance reports by room and date **(additional feature)**
 
 ### 7. **Docker Containerization**
 - Deploy without environment setup
@@ -88,32 +89,6 @@ Each room-wise attendance sheet includes:
 
 ---
 
-## 🏗️ Architecture
-
-```
-Input Excel File
-       ↓
-┌──────────────────────────────────┐
-│   SeatingAllocator (Core Logic)  │
-├──────────────────────────────────┤
-│ • Load input sheets              │
-│ • Parse timetable                │
-│ • Build student-subject map      │
-│ • Validate clash-free schedule   │
-│ • Allocate seating (greedy algo) │
-│ • Write outputs (Excel + PDFs)   │
-└──────────────────────────────────┘
-       ↓
-┌──────────────────────────────────┐
-│    Streamlit Web Application     │
-│    (User-friendly UI)            │
-└──────────────────────────────────┘
-       ↓
-    Output ZIP
-    (Attendance PDFs, Excel reports, logs)
-```
-
----
 
 ## 📁 Project Structure
 
@@ -282,9 +257,9 @@ Pillow             # Image processing
 
 ---
 
-## 🎮 Usage Guide
+## 🎮 Execution Guide
 
-### **Method 1: Web Interface (Recommended)**
+### **Method 1: Web Interface **
 
 ```bash
 streamlit run app.py
@@ -299,27 +274,8 @@ streamlit run app.py
 4. Click "Generate Seating & Attendance"
 5. Download ZIP file with all outputs
 
-### **Method 2: Command Line Interface**
 
-```bash
-python main.py \
-    --input sample_input/sample_timetable.xlsx \
-    --buffer 0 \
-    --density Dense \
-    --output output/
-```
-
-**Parameters:**
-```
---input      Path to Excel input file (required)
---buffer     Buffer seats per room (default: 0)
---density    Dense or Sparse (default: Dense)
---output     Output directory path (default: output/)
---photos     Photos directory (default: photos/)
---icon       No-image icon path (default: photos/no_image_available.jpg)
-```
-
-### **Method 3: Docker**
+### **Method 2: Docker**
 
 ```bash
 # Build image
@@ -332,26 +288,6 @@ docker run -p 8501:8501 seating-app
 Access at `http://localhost:8501`
 
 ---
-
-## ⚙️ Configuration
-
-### `config.py` - Room Configuration
-Pre-configured with example rooms:
-
-```python
-ROOMS = [
-    ("B1", "6101", 50),      # (Building, Room, Capacity)
-    ("B1", "6102", 45),
-    ("B2", "10502", 60),
-    ("Auditorium", "AUD1", 200),
-]
-
-ADJACENCY = {
-    'B1': ['6101', '6102', '6103'],
-    'B2': ['10502', '10503'],
-    'Auditorium': ['AUD1'],
-}
-```
 
 **Update these if using different rooms.**
 
@@ -412,124 +348,15 @@ output/2025_01_10/Morning/
 
 ---
 
-## 🔧 Technical Details
 
-### Core Algorithm: Seating Allocation
-
-```python
-1. Load all inputs (timetable, courses, rooms)
-2. For each exam date:
-    a. For each time slot (Morning/Evening):
-        i. Get list of subjects in slot
-        ii. Sort subjects by student count (descending)
-        iii. For each subject:
-            - Get list of enrolled students
-            - Sort available rooms by capacity (descending)
-            - Allocate students to rooms (greedy approach)
-            - Update room availability
-        iv. Generate Excel and PDF outputs
-3. Write comprehensive reports
-4. Generate attendance PDFs with photos
-```
-
-### Clash Detection Logic
-
-```python
-For each time slot:
-    For each pair of subjects (S1, S2):
-        Find students enrolled in both S1 AND S2
-        If any student found → CLASH DETECTED
-        Log error with: Date, Slot, Subjects, Student Roll
-```
-
-### Effective Capacity Calculation
-
-```python
-Effective Capacity = Room Capacity - Buffer Seats
-If Sparse Mode:
-    Effective Capacity = Effective Capacity / 2
-```
-
----
-
-## 🐛 Troubleshooting
-
-### Issue 1: Missing Excel Sheets
-**Error**: `Missing required sheet: in_timetable`
-
-**Solution**: Ensure all 4 required sheets are present in the Excel file.
-
-### Issue 2: Column Name Mismatch
-**Error**: `in_course_roll_mapping must contain columns: rollno, course_code`
-
-**Solution**: Check Excel sheet column names (case-insensitive matching supported):
-- ✅ `RollNo`, `rollno`, `ROLLNO`
-- ✅ `Course_Code`, `course_code`, `COURSE_CODE`
-
-### Issue 3: Students Cannot Be Allocated
-**Error**: `Cannot allocate X students for <course>`
-
-**Solution**: 
-- Increase number of rooms
-- Increase room capacities
-- Enable Sparse mode (reduces density)
-- Reduce buffer seats
-
-### Issue 4: Photos Not Appearing in PDFs
-**Problem**: All students show default "no image available" placeholder
-
-**Solution**:
-- Ensure photos folder exists and contains images
-- Image names must match roll numbers exactly: `B210001.jpg`
-- Supported formats: JPG, PNG
-- File size: <5MB recommended
-
-### Issue 5: Docker Build Fails
-**Error**: `Module not found` or `Port already in use`
-
-**Solution**:
-```bash
-# Clear docker cache and rebuild
-docker system prune
-docker build -t seating-app --no-cache .
-
-# Use different port if 8501 is busy
-docker run -p 8502:8501 seating-app
-```
 
 ### Check Logs
-Always review log files for detailed error information:
+
 ```bash
-cat output/seating.log
-cat output/errors.txt
+cat output/app.log
+cat output/app_errors.txt
 ```
 
----
-
-## 🔒 Data & Security
-
-- **Input Processing**: Files processed in temporary directories (auto-deleted)
-- **PDF Generation**: ReportLab used for secure PDF creation
-- **Image Handling**: Pillow library with size validation
-- **Logging**: Comprehensive audit logs of all operations
-
----
-
-## 📈 Performance
-
-- **Typical Exam Data**: 500-2000 students
-- **Processing Time**: 30-60 seconds
-- **PDF Generation**: ~0.5-1 second per PDF
-- **Memory Usage**: ~500MB for large exams
-
----
-
-## 🤝 Contributing
-
-For improvements and bug reports:
-1. Create detailed issue with error logs
-2. Provide sample input file (anonymized)
-3. Specify Python version and OS
 
 ---
 
@@ -541,31 +368,12 @@ This project is part of an MTech thesis at **Indian Institute of Technology Patn
 
 ## 👤 Author
 
-**Aayan Verma**  
-M.Tech Student, Computer Science & Engineering  
+**Ayanava Dutta**  
+M.Tech, Computer Science & Engineering  
 Indian Institute of Technology Patna  
 CS5105 - Computing Lab (2025)
 
 ---
 
-## 📧 Support
-
-For questions or issues:
-- Check the [Troubleshooting](#troubleshooting) section
-- Review log files (`seating.log`, `errors.txt`)
-- Consult sample input file for format reference
-
----
-
-## 🙏 Acknowledgments
-
-- IIT Patna administration for project requirements
-- Streamlit for the web framework
-- ReportLab for PDF generation capabilities
-- Python ecosystem (Pandas, Pillow, etc.)
-
----
-
 **Last Updated**: December 2025  
 **Version**: 1.0  
-**Status**: Production Ready ✅
