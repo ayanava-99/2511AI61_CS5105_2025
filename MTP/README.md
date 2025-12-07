@@ -2,25 +2,6 @@
 
 **An intelligent, end-to-end exam management system that automates seating arrangements, clash detection, and attendance PDF generation.**
 
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Input Format](#input-format)
-- [Quick Start](#quick-start)
-- [Installation](#installation)
-- [Usage Guide](#usage-guide)
-- [Configuration](#configuration)
-- [Output Files](#output-files)
-- [Technical Details](#technical-details)
-- [Troubleshooting](#troubleshooting)
-- [Author & License](#author--license)
-
----
 
 ## 🎯 Overview
 
