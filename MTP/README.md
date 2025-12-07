@@ -1,4 +1,4 @@
-# 🎓IIT Patna Exam Seating & Attendance Generator
+# 🎓IIT Patna Exam Seating & Attendance Generator [LINK](https://seating-attendance-iitp.streamlit.app/)
 
 **An intelligent, end-to-end exam management system that automates seating arrangements, clash detection, and attendance PDF generation.**
 
