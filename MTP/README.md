@@ -170,9 +170,9 @@ Your input Excel file must contain the following sheets:
 #### 1. **in_timetable**
 Exam schedule for all days and time slots.
 
-| Date       | Day    | Morning  | Evening  |
-|-----------|--------|----------|----------|
-| 2025-01-10 | Friday | CS101;CS102 | NO EXAM  |
+| Date | Day | Morning | Evening |
+|------|-----|---------|---------|
+| 2025-01-10 | Friday | CS101;CS102 | NO EXAM |
 | 2025-01-11 | Saturday | CS201 | CS301;CS302 |
 
 - **Date**: Exam date (YYYY-MM-DD format)
@@ -183,7 +183,7 @@ Exam schedule for all days and time slots.
 Links which students take which courses.
 
 | RollNo | Course_Code |
-|--------|------------|
+|--------|-------------|
 | B210001 | CS101 |
 | B210002 | CS101 |
 | B210001 | CS102 |
