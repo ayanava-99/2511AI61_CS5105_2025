@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+output/
+*.log
+*.pyo
+*.pyd
+.vscode
+ayan/
+desktop/
+*.xlsx
+.env
+.venv
+.idea
+photos/ 
