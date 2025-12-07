@@ -3,6 +3,7 @@
 **An intelligent, end-to-end exam management system that automates seating arrangements, clash detection, and attendance PDF generation.**
 
 
+
 ## 🎯 Overview
 
 This is a **comprehensive exam management solution** designed for educational institutions (especially IIT Patna) to efficiently manage large-scale examinations. The system automates:
