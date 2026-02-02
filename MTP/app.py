@@ -1,14 +1,18 @@
 import streamlit as st
 import tempfile
 import os
+from pathlib import Path
 import datetime
 import shutil
 import base64
 import textwrap
 import pandas as pd
 
-from seating_allocator import SeatingAllocator
-from logger_setup import setup_logging
+from src.seating_allocator import SeatingAllocator
+from src.logger_setup import setup_logging
+
+# Get the directory where this script is located
+SCRIPT_DIR = Path(__file__).parent.resolve()
 
 def load_image_base64(path: str):
     if not os.path.exists(path):
@@ -16,8 +20,9 @@ def load_image_base64(path: str):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode()
 
-crest_b64 = load_image_base64("iitp_crest.png")
-full_logo_b64 = load_image_base64("iitp_full_logo.png")
+# Use absolute paths relative to the script location
+crest_b64 = load_image_base64(str(SCRIPT_DIR / "assets" / "images" / "iitp_crest.png"))
+full_logo_b64 = load_image_base64(str(SCRIPT_DIR / "assets" / "images" / "iitp_full_logo.png"))
 
 def run_allocation(uploaded_file, buffer, density):
     with tempfile.TemporaryDirectory() as tmpdir:
@@ -44,7 +49,7 @@ def run_allocation(uploaded_file, buffer, density):
         alloc.allocate_all_days()
         alloc.write_outputs()
 
-        photos_dir = "photos"
+        photos_dir = str(SCRIPT_DIR / "assets" / "photos")
         no_image_icon = os.path.join(photos_dir, "no_image_available.jpg")
         alloc.generate_attendance_pdfs(photos_dir, no_image_icon)
 
@@ -190,8 +195,8 @@ header_html = textwrap.dedent(f"""
 st.markdown(header_html, unsafe_allow_html=True)
 st.write("")
 
-tab_generate, tab_attendance = st.tabs(
-    ["🧮 Generate Seating & Attendance", "📂 Download Attendance Sheets"]
+tab_generate, tab_attendance, tab_video = st.tabs(
+    ["🧮 Generate Seating & Attendance", "📂 Download Attendance Sheets", "📺 Project Video"]
 )
 
 
@@ -383,3 +388,10 @@ footer_html = textwrap.dedent(f"""
 </div>
 """)
 st.markdown(footer_html, unsafe_allow_html=True)
+
+
+with tab_video:
+    st.subheader('?? Project Explanation')
+    st.markdown('Watch this video to understand how the Exam Seating & Attendance Generator works:')
+    st.video('https://youtu.be/apRsykyDjLM')
+

@@ -8,8 +8,8 @@ from collections import defaultdict
 
 import pandas as pd
 
-from io_utils import read_excel_file
-from attendance_pdf import build_attendance_pdf
+from .io_utils import read_excel_file
+from .attendance_pdf import build_attendance_pdf
 
 
 class SeatingAllocator:

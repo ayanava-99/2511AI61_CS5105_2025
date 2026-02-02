@@ -4,8 +4,8 @@
 import argparse
 import sys
 import os
-from seating_allocator import SeatingAllocator
-from logger_setup import setup_logging
+from src.seating_allocator import SeatingAllocator
+from src.logger_setup import setup_logging
 
 
 def parse_args():
@@ -35,7 +35,7 @@ def main():
         alloc.load_inputs()
         alloc.allocate_all_days()
         alloc.write_outputs()
-        photos_dir = "photos" 
+        photos_dir = os.path.join("assets", "photos") 
         no_image_icon = os.path.join(photos_dir, "no_image_available.png")
         try:
             alloc.generate_attendance_pdfs(photos_dir=photos_dir,

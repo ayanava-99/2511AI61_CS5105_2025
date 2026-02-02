@@ -6,6 +6,7 @@ from reportlab.platypus import (
 )
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
+from .avatar_fetcher import fetch_avatar
 
 
 def _make_card(roll, name, photo_path, no_image_path, styles):
@@ -74,10 +75,23 @@ def build_attendance_pdf(
         cards = []
         def find_photo_path(roll_str: str) -> str | None:
             roll_str = roll_str.strip()
+            # 1. Try local files
             for ext in (".jpg", ".jpeg", ".png"):
                 candidate = os.path.join(photos_dir, roll_str + ext)
                 if os.path.exists(candidate):
                     return candidate
+            
+            # 2. Try fetching from API (and cache in photos_dir)
+            if logger:
+                logger.info("Fetching avatar for %s...", roll_str)
+            try:
+                fetched = fetch_avatar(roll_str, photos_dir)
+                if fetched:
+                    return fetched
+            except Exception as e:
+                if logger:
+                    logger.warning("Failed to fetch avatar for %s: %s", roll_str, e)
+            
             return None
 
         for roll in roll_list:

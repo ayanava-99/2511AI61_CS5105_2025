@@ -2,7 +2,9 @@
 
 **An intelligent, end-to-end exam management system that automates seating arrangements, clash detection, and attendance PDF generation.**
 
+**[📺 Watch Project Explanation Video](https://youtu.be/apRsykyDjLM)**
 
+---
 
 ## 🎯 Overview
 
@@ -11,6 +13,7 @@ This is a **comprehensive exam management solution** designed for educational in
 ✅ **Seating Allocation** - Intelligent room assignment based on room capacities and exam timetable  
 ✅ **Clash Detection** - Ensures no student appears in multiple exams simultaneously  
 ✅ **Attendance Generation** - Professional PDF sheets with student photos and signature fields  
+✅ **Smart Avatar Fetching** - Automatically fetches student avatars from DiceBear API if photos are completely missing  
 ✅ **Report Generation** - Excel sheets with seating summaries and vacancy tracking  
 ✅ **Web Interface** - User-friendly Streamlit UI for non-technical users  
 ✅ **Docker Support** - One-click deployment on any system  
@@ -41,10 +44,11 @@ Priority-based allocation using:
 └── Optimize room utilization
 ```
 
-### 4. **Attendance PDF Generation**
+### 4. **Attendance PDF Generation with Smart Avatars**
 Each room-wise attendance sheet includes:
 - Student name and roll number
-- Student photograph (from `photos/` folder)
+- Student photograph (from `assets/photos/` folder)
+- **Auto-Fetch Feature**: If a student's photo is missing, the system automatically fetches a deterministic avatar from the DiceBear API based on their roll number.
 - Signature field for each student
 - Exam metadata (date, subject, room, shift)
 - Institution header with IITP branding
@@ -62,7 +66,8 @@ Each room-wise attendance sheet includes:
 - Real-time parameter adjustment
 - One-click processing
 - Automatic ZIP file generation for download
-- Search and view attendance reports by room and date **(additional feature)**
+- Search and view attendance reports by room and date
+- **Project Video Tab**: Integrated video explanation of the project
 
 ### 7. **Docker Containerization**
 - Deploy without environment setup
@@ -77,23 +82,27 @@ Each room-wise attendance sheet includes:
 ```
 MTP/
 ├── app.py                        # Streamlit web interface
-├── seating_allocator.py          # Core seating logic
-├── attendance_pdf.py             # PDF generation module
 ├── main.py                       # CLI entry point
-├── config.py                     # Configuration (rooms, adjacency)
-├── logger_setup.py               # Logging configuration
-├── io_utils.py                   # File I/O utilities
-├── requirements.txt              # Python dependencies
 ├── Dockerfile                    # Docker configuration
 ├── .dockerignore                 # Docker ignore rules
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project documentation
 │
-├── iitp_crest.jpg                # Institution logo (small)
-├── iitp_full_logo.jpg            # Institution logo (full)
+├── src/                          # Source code modules
+│   ├── seating_allocator.py      # Core seating logic
+│   ├── attendance_pdf.py         # PDF generation logic
+│   ├── avatar_fetcher.py         # [NEW] API integration for avatars
+│   ├── io_utils.py               # File I/O utilities
+│   ├── logger_setup.py           # Logging setup
+│   └── config.py                 # Configuration
 │
-├── photos/                       # Student photographs
-│   ├── <roll_number>.jpg         # e.g., B210001.jpg
-│   ├── <roll_number>.jpg
-│   └── no_image_available.jpg    # Fallback image
+├── assets/                       # Static assets
+│   ├── images/
+│   │   ├── iitp_crest.png        # Institution crest
+│   │   └── iitp_full_logo.png    # Institution logo
+│   └── photos/                   # Student photographs
+│       ├── <roll_number>.jpg     # e.g., B210001.jpg
+│       └── no_image_available.jpg # Fallback image
 │
 ├── sample_input/                 # Example input Excel file
 │   └── sample_timetable.xlsx     # Template with required sheets
@@ -180,13 +189,14 @@ Available exam halls and their capacities.
 Create an Excel file with the 4 sheets described above. Use `sample_input/sample_timetable.xlsx` as a template.
 
 ### 2. **Prepare Student Photos** (Optional)
-Place student photos in the `photos/` folder:
+Place student photos in the `assets/photos/` folder:
 ```
-photos/
+assets/photos/
 ├── B210001.jpg
 ├── B210002.jpg
 └── no_image_available.jpg  # Fallback image
 ```
+*Note: If a photo is missing, the system will try to fetch a random avatar from the web.*
 
 ### 3. **Run the Web App**
 ```bash
@@ -231,11 +241,8 @@ reportlab          # PDF generation
 openpyxl           # Excel file handling
 xlsxwriter         # Excel writing
 Pillow             # Image processing
+requests           # API calls for avatars
 ```
-
-### Step 3: Prepare Resources
-- Add student photos to `photos/` folder (naming: `<rollno>.jpg`)
-- Place institution logos as `iitp_crest.jpg` and `iitp_full_logo.jpg`
 
 ---
 
@@ -251,8 +258,8 @@ streamlit run app.py
 1. Open `http://localhost:8501` in browser
 2. Upload your Excel input file
 3. Set parameters:
-   - **Buffer Seats**: Seats to reserve per room (e.g., 0, 2, 5)
-   - **Density Mode**: Dense (full capacity) or Sparse (50% capacity)
+    - **Buffer Seats**: Seats to reserve per room (e.g., 0, 2, 5)
+    - **Density Mode**: Dense (full capacity) or Sparse (50% capacity)
 4. Click "Generate Seating & Attendance"
 5. Download ZIP file with all outputs
 
@@ -271,77 +278,6 @@ Access at `http://localhost:8501`
 
 ---
 
-**Update these if using different rooms.**
-
-### Buffer Seats
-- **What**: Seats reserved between students for social distancing
-- **Usage**: `--buffer 2` reserves 2 seats per room
-- **Effect**: Reduces effective capacity
-
-### Density Modes
-- **Dense**: Uses full room capacity (100%)
-- **Sparse**: Uses 50% of room capacity
-- **Use case**: Sparse for large-scale exams or social distancing requirements
-
----
-
-## 📊 Output Files
-
-### Generated Outputs
-
-#### 1. **Attendance PDFs**
-```
-attendance/
-├── 2025_01_10_Morning_6101_CS101.pdf
-├── 2025_01_10_Morning_6102_CS102.pdf
-├── 2025_01_10_Evening_10502_CS201.pdf
-└── ...
-```
-**Contains:** Student photos, names, roll numbers, signature fields
-
-#### 2. **Seating Arrangement Excel**
-**File**: `op_overall_seating_arrangement.xlsx`
-
-| Date | Day | Course_Code | Room | Allocated_Students_Count | Roll_List |
-|------|-----|-------------|------|--------------------------|-----------|
-| 2025-01-10 | Friday | CS101 | 6101 | 25 | B210001;B210002;... |
-
-#### 3. **Vacancy Report**
-**File**: `op_seats_left.xlsx`
-
-Multiple sheets (one per date-slot combination):
-
-| Room No. | Exam Capacity | Block | Alloted | Vacant |
-|----------|---------------|-------|--------|--------|
-| 6101 | 50 | B1 | 25 | 25 |
-| 10502 | 60 | B2 | 45 | 15 |
-
-#### 4. **Subject-wise Allocation** (per date/slot)
-```
-output/2025_01_10/Morning/
-├── CS101.xlsx    # Students allocated to CS101
-├── CS102.xlsx    # Students allocated to CS102
-└── ...
-```
-
-#### 5. **Log Files**
-- **seating.log**: Detailed execution logs
-- **errors.txt**: All errors and warnings
-
----
-
-
-
-### Check Logs
-
-```bash
-cat output/app.log
-cat output/app_errors.txt
-```
-
-
----
-
 ## 📝 License
 
 This project is part of an MTech thesis at **Indian Institute of Technology Patna**.
@@ -357,5 +293,5 @@ CS5105 - Computing Lab (2025)
 
 ---
 
-**Last Updated**: December 2025  
-**Version**: 1.0  
+**Last Updated**: February 2026  
+**Version**: 1.1 (Reorganized structure & Avatar API Integration)
