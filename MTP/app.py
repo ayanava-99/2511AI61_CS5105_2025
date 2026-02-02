@@ -164,7 +164,7 @@ st.markdown(
         color: #003366 !important;
         font-weight: 600 !important;
     }
-    .stButton>button {
+    .stButton>button, .stDownloadButton>button {
         background-color: #004488 !important; /* Lighter blue to not look black */
         color: #ffffff !important;
         border-radius: 16px;
@@ -174,16 +174,16 @@ st.markdown(
         border: 2px solid #FFD700;
         transition: all 0.3s ease;
     }
-    .stButton>button * {
+    .stButton>button *, .stDownloadButton>button * {
         color: #ffffff !important; /* Force text white */
         transition: color 0.3s ease;
     }
-    .stButton>button:hover {
+    .stButton>button:hover, .stDownloadButton>button:hover {
         background-color: #003366 !important; /* Darker blue on hover */
         border-color: #FFD700 !important;
         transform: scale(1.02);
     }
-    .stButton>button:hover * {
+    .stButton>button:hover *, .stDownloadButton>button:hover * {
         color: #FFD700 !important; /* Text turns yellow on hover */
     }
     </style>
