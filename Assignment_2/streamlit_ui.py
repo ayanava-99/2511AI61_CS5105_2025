@@ -7,8 +7,9 @@ from datetime import datetime
 import logging
 from allocation_core import allocate_by_band_with_cycle, compute_faculty_pref_counts_from_df
 
-BASE_DIR = os.getcwd()
-OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
+import tempfile
+
+OUTPUT_DIR = os.path.join(tempfile.gettempdir(), "assignment2_outputs")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 LOG_FILE = os.path.join(OUTPUT_DIR, "allocation.log")
 
