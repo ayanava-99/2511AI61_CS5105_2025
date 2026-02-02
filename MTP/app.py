@@ -164,6 +164,47 @@ st.markdown(
         color: #003366 !important;
         font-weight: 600 !important;
     }
+    /* Button & Download Button Styles */
+    .stButton>button, 
+    .stDownloadButton>button,
+    .stDownloadButton>a {
+        background-color: #1E88E5 !important; /* Material Blue 600 */
+        color: #ffffff !important;
+        border: 2px solid #FFD700 !important;
+        border-radius: 12px !important;
+        padding: 0.5rem 1rem !important;
+        font-weight: bold !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important; /* For a tags */
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    /* Force text color for all child elements */
+    .stButton>button *, 
+    .stDownloadButton>button *,
+    .stDownloadButton>a * {
+        color: #ffffff !important;
+        font-weight: bold !important;
+    }
+    
+    /* Hover Effects */
+    .stButton>button:hover, 
+    .stDownloadButton>button:hover,
+    .stDownloadButton>a:hover {
+        background-color: #0D47A1 !important; /* Darker blue */
+        border-color: #FFD700 !important;
+        transform: scale(1.02);
+        color: #FFD700 !important;
+    }
+    
+    /* Text turns Gold on Hover */
+    .stButton>button:hover *, 
+    .stDownloadButton>button:hover *,
+    .stDownloadButton>a:hover * {
+        color: #FFD700 !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
