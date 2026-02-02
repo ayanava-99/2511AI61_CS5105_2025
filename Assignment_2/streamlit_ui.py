@@ -29,97 +29,106 @@ def df_to_csv_bytes(df: pd.DataFrame) -> bytes:
 
 
 
-st.set_page_config(page_title="Student Allocation System", layout="wide")
-st.title("Student Allocation System -- IIT Patna")
-st.markdown("Upload your input CSV (Roll, Name, Email, CGPA, then faculty columns with integer ranks).")
+st.set_page_config(page_title="Student Allocation System", layout="wide", page_icon="🎓")
 
-
-for key in ("uploaded_df", "alloc_df", "fac_pref_df", "alloc_ts", "alloc_path", "fac_path"):
-    if key not in st.session_state:
-        st.session_state[key] = None
-
-
-uploaded_file = st.file_uploader("Upload CSV", type=["csv"])
-if uploaded_file is not None:
-    try:
-        st.session_state["uploaded_df"] = pd.read_csv(uploaded_file)
-        st.toast(f"Loaded input file: {st.session_state['uploaded_df'].shape[0]} rows × {st.session_state['uploaded_df'].shape[1]} cols")
-    except Exception as e:
-        st.error(f"Error reading uploaded CSV: {e}")
-        logger.exception("Error reading uploaded CSV: %s", e)
-        st.session_state["uploaded_df"] = None
-
-
-if st.session_state["uploaded_df"] is not None:
-    if st.checkbox("View top 20 records", value=False):
-        st.dataframe(st.session_state["uploaded_df"].head(20))
-
-
-st.subheader("Run Allocation")
-
-col1, col2, col3 = st.columns([1, 1, 1])
-with col1:
-    run_btn = st.button("Process allocation")
-with col2:
-    st.empty()
-with col3:
-    st.empty()
-
-if run_btn and st.session_state["uploaded_df"] is not None:
-    try:
-        with st.spinner("Allocating..."):
-            alloc_df, fac_pref_df, alloc_path, fac_path = allocate_by_band_with_cycle(
-                st.session_state["uploaded_df"].copy(), output_dir=OUTPUT_DIR
+# Sidebar for instructions and sample download
+with st.sidebar:
+    st.header("ℹ️ Instructions")
+    st.markdown("""
+    1. **Upload Input**: CSV file with columns: `Roll`, `Name`, `Email`, `CGPA`, followed by Faculty columns (integer ranks).
+    2. **Process**: Click 'Process Allocation' to run the algorithm.
+    3. **Download**: Get the allocation results and statistics.
+    """)
+    
+    st.markdown("---")
+    st.subheader("📂 Sample Data")
+    sample_csv_path = os.path.join(BASE_DIR, "input_btp_mtp_allocation.csv")
+    if os.path.exists(sample_csv_path):
+        with open(sample_csv_path, "rb") as f:
+            st.download_button(
+                label="📥 Download Sample CSV",
+                data=f,
+                file_name="sample_input_allocation.csv",
+                mime="text/csv",
+                help="Use this file structure for your input."
             )
-            ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-            st.session_state["alloc_df"] = alloc_df
-            st.session_state["fac_pref_df"] = fac_pref_df
-            st.session_state["alloc_ts"] = ts
-            st.session_state["alloc_path"] = alloc_path
-            st.session_state["fac_path"] = fac_path
-            st.success("✅ Files generated successfully")
-    except Exception as e:
-        st.error(f"Allocation failed: {e}")
-        logger.exception("Allocation failed: %s", e)
 
+st.title("🎓 Student Allocation System")
+st.markdown("### IIT Patna - BTP/MTP Allocation")
 
-if st.session_state.get("alloc_df") is not None and st.session_state.get("fac_pref_df") is not None:
+# Main Input Section
+with st.container():
+    st.markdown("#### 1. Upload Data")
+    uploaded_file = st.file_uploader("Upload your input CSV file", type=["csv"])
+
+    if uploaded_file is not None:
+        try:
+            st.session_state["uploaded_df"] = pd.read_csv(uploaded_file)
+            st.success(f"✅ Loaded: {st.session_state['uploaded_df'].shape[0]} students")
+            
+            with st.expander("👀 Preview Input Data"):
+                st.dataframe(st.session_state["uploaded_df"].head(10))
+                
+        except Exception as e:
+            st.error(f"❌ Error reading CSV: {e}")
+            logger.exception("Error reading uploaded CSV: %s", e)
+            st.session_state["uploaded_df"] = None
+
+# Allocation Section
+if st.session_state.get("uploaded_df") is not None:
+    st.markdown("---")
+    st.markdown("#### 2. Run Allocation")
+    
+    if st.button("🚀 Process Allocation", type="primary"):
+        try:
+            with st.spinner("🔄 Running allocation algorithm..."):
+                alloc_df, fac_pref_df, alloc_path, fac_path = allocate_by_band_with_cycle(
+                    st.session_state["uploaded_df"].copy(), output_dir=OUTPUT_DIR
+                )
+                ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                st.session_state["alloc_df"] = alloc_df
+                st.session_state["fac_pref_df"] = fac_pref_df
+                st.session_state["alloc_ts"] = ts
+                st.session_state["alloc_path"] = alloc_path
+                st.session_state["fac_path"] = fac_path
+                st.toast("✅ Allocation Completed!", icon="🎉")
+        except Exception as e:
+            st.error(f"❌ Allocation failed: {e}")
+            logger.exception("Allocation failed: %s", e)
+
+# Results Display
+if st.session_state.get("alloc_df") is not None:
+    st.markdown("---")
+    st.markdown("#### 3. Results & Downloads")
+    
     alloc_df = st.session_state["alloc_df"]
     fac_pref_df = st.session_state["fac_pref_df"]
     ts = st.session_state.get("alloc_ts") or datetime.now().strftime("%Y%m%d_%H%M%S")
     fac_counts = fac_pref_df.copy()
 
+    tab1, tab2 = st.tabs(["📋 Student Allocation", "📊 Faculty Stats"])
     
-    st.subheader("Allocation (first 10 rows)")
-    st.dataframe(alloc_df.head(10))
-    st.subheader("Faculty Preference Counts")
-    st.dataframe(fac_counts)
-
-   
-    col_dl1, col_dl2 = st.columns(2)
-    with col_dl1:
+    with tab1:
+        st.dataframe(alloc_df.head(20), use_container_width=True)
+        st.caption("Showing first 20 rows.")
         st.download_button(
-            "Download allocation CSV",
+            "📥 Download Full Allocation CSV",
             data=df_to_csv_bytes(alloc_df),
-            file_name=f"output_btp_mtp_allocation_{ts}.csv",
+            file_name=f"allocation_results_{ts}.csv",
             mime="text/csv",
+            type="primary"
         )
-    with col_dl2:
+        
+    with tab2:
+        st.dataframe(fac_counts, use_container_width=True)
         st.download_button(
-            "Download faculty preference CSV",
+            "📥 Download Faculty Stats CSV",
             data=df_to_csv_bytes(fac_counts.reset_index()),
-            file_name=f"fac_preference_count_{ts}.csv",
+            file_name=f"faculty_stats_{ts}.csv",
             mime="text/csv",
         )
 
-    
-
-
-st.markdown("---")
-st.caption(f"Logs are automatically saved to: `{LOG_FILE}`")
-
-
-if st.button("Clear outputs"):
-    for k in ("alloc_df", "fac_pref_df", "alloc_ts", "alloc_path", "fac_path"):
-        st.session_state[k] = None
-    st.success("Cleared generated outputs")
+    if st.button("🔄 Clear Results"):
+        for k in ("alloc_df", "fac_pref_df", "alloc_ts", "alloc_path", "fac_path"):
+            st.session_state[k] = None
+        st.rerun()
