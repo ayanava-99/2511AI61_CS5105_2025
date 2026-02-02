@@ -9,6 +9,7 @@ from allocation_core import allocate_by_band_with_cycle, compute_faculty_pref_co
 
 import tempfile
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_DIR = os.path.join(tempfile.gettempdir(), "assignment2_outputs")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 LOG_FILE = os.path.join(OUTPUT_DIR, "allocation.log")
