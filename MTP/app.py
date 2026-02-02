@@ -232,7 +232,7 @@ with tab_generate:
         "seating arrangements and attendance sheets."
     )
 
-    sample_input_path = SCRIPT_DIR / "sample_inputs" / "input_data_tt.xlsx"
+    sample_input_path = SCRIPT_DIR / "sample_inputs" / "sample_input_small.xlsx"
     sample_output_path = SCRIPT_DIR / "sample_inputs" / "sample_attendance.pdf"
 
     def create_download_link(file_path, label):
