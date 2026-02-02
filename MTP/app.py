@@ -235,33 +235,35 @@ with tab_generate:
     sample_input_path = SCRIPT_DIR / "sample_inputs" / "input_data_tt.xlsx"
     sample_output_path = SCRIPT_DIR / "sample_inputs" / "sample_attendance.pdf"
 
+    def create_download_link(file_path, label):
+        if not file_path.exists():
+            return None
+        with open(file_path, "rb") as f:
+            data = f.read()
+        b64 = base64.b64encode(data).decode()
+        filename = file_path.name
+        if file_path.suffix == ".xlsx":
+            mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        elif file_path.suffix == ".pdf":
+            mime = "application/pdf"
+        else:
+            mime = "application/octet-stream"
+        return f'<a href="data:{mime};base64,{b64}" download="{filename}" style="text-decoration:none; color:#1E88E5; font-weight:bold;">{label}</a>'
+
+    link_input = create_download_link(sample_input_path, "📥 Download Sample Input (Excel)")
+    link_output = create_download_link(sample_output_path, "📄 Download Sample Output (PDF)")
+
     col_dl1, col_dl2 = st.columns(2)
     
     with col_dl1:
-        if sample_input_path.exists():
-            with open(sample_input_path, "rb") as f:
-                st.download_button(
-                    label="📥 Download Sample Input (Excel)",
-                    data=f,
-                    file_name="sample_input.xlsx",
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    help="Download a sample Excel file to see the expected format.",
-                    use_container_width=True
-                )
+        if link_input:
+            st.markdown(link_input, unsafe_allow_html=True)
         else:
             st.info("Sample input file not available.")
 
     with col_dl2:
-        if sample_output_path.exists():
-            with open(sample_output_path, "rb") as f:
-                st.download_button(
-                    label="📄 Download Sample Output (PDF)",
-                    data=f,
-                    file_name="sample_attendance.pdf",
-                    mime="application/pdf",
-                    help="See an example of the generated attendance sheet.",
-                    use_container_width=True
-                )
+        if link_output:
+            st.markdown(link_output, unsafe_allow_html=True)
         else:
             st.info("Sample output PDF not available.")
 
