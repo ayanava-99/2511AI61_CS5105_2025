@@ -3,4 +3,5 @@ reportlab
 pandas
 Pillow   
 openpyxl            
-xlsxwriterrequests
+xlsxwriter
+requests
