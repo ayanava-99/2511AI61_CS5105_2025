@@ -165,20 +165,26 @@ st.markdown(
         font-weight: 600 !important;
     }
     .stButton>button {
-        background-color: #003366 !important;
+        background-color: #004488 !important; /* Lighter blue to not look black */
         color: #ffffff !important;
         border-radius: 16px;
         padding: 0.9rem 1.2rem;
         font-size: 1rem;
         font-weight: 600;
         border: 2px solid #FFD700;
+        transition: all 0.3s ease;
     }
     .stButton>button * {
-        color: #ffffff !important;
+        color: #ffffff !important; /* Force text white */
+        transition: color 0.3s ease;
     }
     .stButton>button:hover {
-        background-color: #FFD700 !important;
-        color: #003366 !important;
+        background-color: #003366 !important; /* Darker blue on hover */
+        border-color: #FFD700 !important;
+        transform: scale(1.02);
+    }
+    .stButton>button:hover * {
+        color: #FFD700 !important; /* Text turns yellow on hover */
     }
     </style>
     """,
