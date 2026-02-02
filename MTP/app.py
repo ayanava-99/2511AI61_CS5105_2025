@@ -213,18 +213,38 @@ with tab_generate:
         "seating arrangements and attendance sheets."
     )
 
-    sample_file_path = SCRIPT_DIR / "sample_inputs" / "input_data_tt.xlsx"
-    if sample_file_path.exists():
-        with open(sample_file_path, "rb") as f:
-            st.download_button(
-                label="📥 Download Sample Input File",
-                data=f,
-                file_name="sample_input.xlsx",
-                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                help="Download a sample Excel file to see the expected format."
-            )
-    else:
-        st.warning("Sample input file not found.")
+    sample_input_path = SCRIPT_DIR / "sample_inputs" / "input_data_tt.xlsx"
+    sample_output_path = SCRIPT_DIR / "sample_inputs" / "sample_attendance.pdf"
+
+    col_dl1, col_dl2 = st.columns(2)
+    
+    with col_dl1:
+        if sample_input_path.exists():
+            with open(sample_input_path, "rb") as f:
+                st.download_button(
+                    label="📥 Download Sample Input (Excel)",
+                    data=f,
+                    file_name="sample_input.xlsx",
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    help="Download a sample Excel file to see the expected format.",
+                    use_container_width=True
+                )
+        else:
+            st.info("Sample input file not available.")
+
+    with col_dl2:
+        if sample_output_path.exists():
+            with open(sample_output_path, "rb") as f:
+                st.download_button(
+                    label="📄 Download Sample Output (PDF)",
+                    data=f,
+                    file_name="sample_attendance.pdf",
+                    mime="application/pdf",
+                    help="See an example of the generated attendance sheet.",
+                    use_container_width=True
+                )
+        else:
+            st.info("Sample output PDF not available.")
 
     uploaded = st.file_uploader("Choose an Excel file", type=["xlsx"], key="input_excel")
 
